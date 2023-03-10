@@ -1,7 +1,9 @@
 import { useFonts } from 'expo-font'
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
+import ButtonNext from '../components/ButtonNext'
+import Circles from '../components/Circles'
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
 	useFonts({
 		Poppins_Regular: require('../../assets/fonts/Poppins-Regular.ttf'),
 		Poppins_Bold: require('../../assets/fonts/Poppins-Bold.ttf'),
@@ -9,8 +11,7 @@ export default function HomeScreen() {
 
 	return (
 		<View>
-			<View style={styles.circleLeft} />
-			<View style={styles.circleRight} />
+			<Circles />
 			<View style={styles.viewHome}>
 				<Image source={require('../../assets/image1.png')} />
 				<Text style={styles.title}>Get things done with ToDo</Text>
@@ -21,38 +22,17 @@ export default function HomeScreen() {
 						deleniti nihil dolorem repellendus.
 					</Text>
 				</View>
-				<Pressable style={styles.button}>
-					<Text style={styles.textButton}>Get Started</Text>
-				</Pressable>
+				<ButtonNext text={'Get Started'} onPress={() => { navigation.push('SignUp') }} />
 			</View>
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
-	circleLeft: {
-		backgroundColor: '#55847a',
-		width: 200,
-		height: 200,
-		borderRadius: 100,
-		position: 'absolute',
-		top: -240,
-		left: -130,
-		opacity: 0.5,
-	},
-	circleRight: {
-		backgroundColor: '#55847a',
-		width: 200,
-		height: 200,
-		borderRadius: 100,
-		position: 'absolute',
-		top: -290,
-		left: -40,
-		opacity: 0.5,
-	},
 	viewHome: {
 		alignItems: 'center',
 		justifyContent: 'center',
+		height: '100%',
 	},
 	title: {
 		fontFamily: 'Poppins_Bold',
@@ -69,18 +49,6 @@ const styles = StyleSheet.create({
 	subtitle: {
 		fontFamily: 'Poppins_Regular',
 		fontSize: 13,
-		textAlign: 'center',
-	},
-	button: {
-		backgroundColor: '#55847a',
-		width: 220,
-		height: 44,
-		justifyContent: 'center',
-	},
-	textButton: {
-		fontFamily: 'Poppins_Regular',
-		color: '#ffffff',
-		fontSize: 14,
 		textAlign: 'center',
 	}
 })
