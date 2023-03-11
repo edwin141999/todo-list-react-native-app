@@ -1,13 +1,8 @@
-import { useFonts } from 'expo-font';
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import ButtonNext from "../components/ButtonNext";
 import Circles from "../components/Circles";
 
 export default function SignUpScreen({ navigation }) {
-  useFonts({
-    Poppins_Regular: require('../../assets/fonts/Poppins-Regular.ttf'),
-    Poppins_Bold: require('../../assets/fonts/Poppins-Bold.ttf'),
-  })
   return (
     <View>
       <Circles />

@@ -1,14 +1,8 @@
-import { useFonts } from 'expo-font'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import ButtonNext from '../components/ButtonNext'
-import Circles from '../components/Circles'
+import { Image, StyleSheet, Text, View } from 'react-native';
+import ButtonNext from '../components/ButtonNext';
+import Circles from '../components/Circles';
 
 export default function HomeScreen({ navigation }) {
-	useFonts({
-		Poppins_Regular: require('../../assets/fonts/Poppins-Regular.ttf'),
-		Poppins_Bold: require('../../assets/fonts/Poppins-Bold.ttf'),
-	})
-
 	return (
 		<View>
 			<Circles />
