@@ -1,15 +1,16 @@
-import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import ButtonBack from "../components/ButtonBack";
 import ButtonNext from "../components/ButtonNext";
 import Circles from "../components/Circles";
 
 export default function SignUpScreen({ navigation }) {
   return (
     <View>
-      <Circles />
+      <View style={styles.viewCircle}>
+        <Circles />
+        <ButtonBack onPress={() => { navigation.goBack() }} />
+      </View>
       <View style={styles.viewHome}>
-        <Pressable onPress={() => { navigation.goBack() }} style={styles.back}>
-          <Image source={require('../../assets/back_arrow.png')} />
-        </Pressable>
         <Text style={styles.title}>Welcome Onboard!</Text>
         <Text style={styles.subtitle}>Let's help you meet up your task</Text>
         <View style={styles.viewTextInput}>
@@ -21,7 +22,9 @@ export default function SignUpScreen({ navigation }) {
         <ButtonNext text={'Sign Up'} onPress={() => { navigation.push('SignUp') }} />
         <View style={styles.viewRow}>
           <Text style={[styles.textRow, styles.textRowGrey]}>Already have an account ? </Text>
-          <Text style={[styles.textRow, styles.textRowGreen]}>Sign In</Text>
+          <Pressable onPress={() => { navigation.push('SignIn') }}>
+            <Text style={[styles.textRow, styles.textRowGreen]}>Sign In</Text>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -29,10 +32,8 @@ export default function SignUpScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  back: {
-    position: 'absolute',
-    top: 70,
-    left: -10,
+  viewCircle: {
+    flex: 1,
   },
   title: {
     fontFamily: 'Poppins_Bold',
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
   viewHome: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100%',
+    flex:8,
   },
   viewTextInput: {
     marginBottom: 80,
