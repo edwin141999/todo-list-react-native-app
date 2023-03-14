@@ -20,7 +20,7 @@ export default function SignInScreen({ navigation }) {
         <View style={styles.viewSubtitle}>
           <Text style={styles.subtitle}>Forgot Password ?</Text>
         </View>
-        <ButtonNext text={'Sign In'} onPress={() => { navigation.push('SignUp') }} />
+        <ButtonNext text={'Sign In'} onPress={() => { navigation.push('AddTodo') }} />
         <View style={styles.viewRow}>
           <Text style={[styles.textRow, styles.textRowGrey]}>Dont have an account ? </Text>
           <Pressable onPress={() => { navigation.push('SignIn') }}>

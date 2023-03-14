@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as Font from 'expo-font'
 import { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
+import AddTodoScreen from './src/screens/AddTodoScreen'
 import HomeScreen from './src/screens/HomeScreen'
 import SignInScreen from './src/screens/SignInScreen'
 import SignUpScreen from './src/screens/SignUpScreen'
@@ -47,6 +48,14 @@ function SignIn({ navigation }) {
   )
 }
 
+function AddTodo({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <AddTodoScreen navigation={navigation} />
+    </View>
+  )
+}
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -54,6 +63,7 @@ export default function App() {
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='SignUp' component={SignUp} />
         <Stack.Screen name='SignIn' component={SignIn} />
+        <Stack.Screen name='AddTodo' component={AddTodo} />
         {/* <StatusBar style='auto' /> */}
       </Stack.Navigator>
     </NavigationContainer>
