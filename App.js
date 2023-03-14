@@ -4,6 +4,7 @@ import * as Font from 'expo-font'
 import { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import HomeScreen from './src/screens/HomeScreen'
+import SignInScreen from './src/screens/SignInScreen'
 import SignUpScreen from './src/screens/SignUpScreen'
 
 const Stack = createNativeStackNavigator()
@@ -38,12 +39,21 @@ function SignUp({ navigation }) {
   )
 }
 
+function SignIn({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <SignInScreen navigation={navigation} />
+    </View>
+  )
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: false }}>
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='SignUp' component={SignUp} />
+        <Stack.Screen name='SignIn' component={SignIn} />
         {/* <StatusBar style='auto' /> */}
       </Stack.Navigator>
     </NavigationContainer>
