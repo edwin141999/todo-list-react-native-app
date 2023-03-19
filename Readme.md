@@ -14,4 +14,4 @@ https://www.figma.com/file/9CzWky2AsHTgemB6M1Lfik/Todo-List-App-(Community)?node
 
 ## Screenshots
 
-![Dashboard](assets\screenshots\dashboard.png)
+![Dashboard](assets/screenshots/dashboard.png)
