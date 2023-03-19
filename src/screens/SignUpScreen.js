@@ -19,7 +19,7 @@ export default function SignUpScreen({ navigation }) {
           <TextInput placeholder="Create a Password" style={styles.inputSignUp} placeholderTextColor='#000000' keyboardType="visible-password" />
           <TextInput placeholder="Confirm your Password" style={styles.inputSignUp} placeholderTextColor='#000000' keyboardType="visible-password" />
         </View>
-        <ButtonNext text={'Sign Up'} onPress={() => { navigation.push('AddTodo') }} />
+        <ButtonNext text={'Sign Up'} onPress={() => { navigation.push('Dashboard') }} />
         <View style={styles.viewRow}>
           <Text style={[styles.textRow, styles.textRowGrey]}>Already have an account ? </Text>
           <Pressable onPress={() => { navigation.push('SignIn') }}>

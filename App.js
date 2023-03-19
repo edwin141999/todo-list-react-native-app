@@ -4,6 +4,7 @@ import * as Font from 'expo-font'
 import { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import AddTodoScreen from './src/screens/AddTodoScreen'
+import DashboardScreen from './src/screens/DashboardScreen'
 import HomeScreen from './src/screens/HomeScreen'
 import SignInScreen from './src/screens/SignInScreen'
 import SignUpScreen from './src/screens/SignUpScreen'
@@ -56,6 +57,14 @@ function AddTodo({ navigation }) {
   )
 }
 
+function Dashboard({navigation}) {
+  return(
+    <View style={styles.container}>
+      <DashboardScreen navigation={navigation} />
+    </View>
+  )
+}
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -64,6 +73,7 @@ export default function App() {
         <Stack.Screen name='SignUp' component={SignUp} />
         <Stack.Screen name='SignIn' component={SignIn} />
         <Stack.Screen name='AddTodo' component={AddTodo} />
+        <Stack.Screen name='Dashboard' component={Dashboard} />
         {/* <StatusBar style='auto' /> */}
       </Stack.Navigator>
     </NavigationContainer>
